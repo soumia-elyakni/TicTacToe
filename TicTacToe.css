@@ -1,0 +1,51 @@
+
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 30px;
+background-color: rgb(247, 226, 239);
+}
+
+input{
+    border: 2px solid purple;
+}
+
+.turnOf{
+  border: 2px solid purple;
+  border-radius: 7px;
+  padding: 8px;
+  font-size: large;
+  font-weight: bold;
+
+}
+
+#gameBox{
+    width: 50%;
+    background-color: palevioletred;
+}
+
+.role{
+    color: purple;
+}
+
+.gaming{
+    
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 50px 0;
+}
+
+.cels{
+    height: 88px;
+}
+
+.cel{
+    background-color: plum;
+}
+
+.cel:hover{
+    background-color: pink;
+}
+
