@@ -94,21 +94,34 @@ function fill(id) {
             cel.innerHTML = "X";
             symbole = "O";
             player = localStorage.getItem("G2");
-            sira();
+            
             winner();
             
             if (winnerIs == "X"){
                 var W = window.localStorage.getItem("G1");
+                cel.innerHTML = "X";
                 alert('winner is:'+ W);
-                e.preventDefault();
+                for (i = 1; i < 10; i++) {
+                    cels[i].innerHTML = "";
+                } 
+                winnerIs=null;
+                
+
+                
             } else if (winnerIs == "O"){
                 var W = window.localStorage.getItem("G2");
+                cel.innerHTML = "O";
                 alert('winner is:'+ W);
-                e.preventDefault();
+                for (i = 1; i < 10; i++) {
+                    cels[i].innerHTML = "";
+                }
+                winnerIs=null;
+
+                
             } 
+            sira();
             
-            
-        } else if (symbole == "O" && cel.innerHTML == "") {
+        } else if (symbole == "O" && cel.innerHTML == "" ) {
             cel.innerHTML = "O";
             symbole = "X";
             player = localStorage.getItem("G1");
@@ -117,14 +130,24 @@ function fill(id) {
 
             if (winnerIs == "X"){
                var W = window.localStorage.getItem("G1");
+               cel.innerHTML = "X";
                 alert('winner is:'+ W);
-                e.preventDefault();
+                for (i = 1; i < 10; i++) {
+                    cels[i].innerHTML = "";
+                }
+                winnerIs=null;
+                
             } else if (winnerIs == "O"){
                var W = window.localStorage.getItem("G2");
+               cel.innerHTML = "O";
                 alert('winner is:'+ W);
-                e.preventDefault();
+                for (i = 1; i < 10; i++) {
+                    cels[i].innerHTML = "";
+                }
+                winnerIs=null;
+                
             } 
-            
+            sira();
         }
         
         
