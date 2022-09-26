@@ -13,13 +13,13 @@ let cels = [];
 
 let div = document.createElement("div");
 
-function clear(){
-    for (i = 1; i < 10; i++) {
-        cels[i].innerHTML = "";
-      } 
+function clear() {
+  for (i = 1; i < 10; i++) {
+    cels[i].innerHTML = "";
+  }
 }
 
-function reload(){
+function reload() {
   location.reload();
 }
 
@@ -48,19 +48,17 @@ function result(W) {
     resultBox.style.display = "block";
     resultMsg.append(div);
   } else {
-    div.textContent = "winner is:" +" " + W;
+    div.textContent = "winner is:" + " " + W;
     div.className = "result";
     resultBox.style.display = "block";
     resultMsg.append(div);
   }
- 
 }
 
 function winner() {
   for (i = 1; i < 10; i++) {
     cels[i] = document.getElementById("c" + i);
   }
-
 
   if (
     cels[1].innerHTML === cels[2].innerHTML &&
@@ -112,9 +110,9 @@ function winner() {
   ) {
     winnerIs = cels[7].innerHTML;
   }
-  if ((submitB == 9) && (winnerIs == null) ){
-     winnerIs = "noBody";
-  } 
+  if (submitB == 9 && winnerIs == null) {
+    winnerIs = "noBody";
+  }
   //   console.log(winnerIs);
   return winnerIs;
 }
@@ -160,7 +158,6 @@ function fill(id) {
         cel.innerHTML = "O";
         result(W);
       }
-      
     } else if (symbole == "O" && cel.innerHTML == "") {
       cel.innerHTML = "O";
       symbole = "X";
@@ -179,7 +176,6 @@ function fill(id) {
         cel.innerHTML = "O";
         result(W);
       }
-      
     }
   }
 }
