@@ -43,7 +43,7 @@ function sira() {
 function result(W) {
   let p = document.createElement("p");
   if (winnerIs == "noBody") {
-    p.textContent = W;
+    p.textContent = W ;
     p.className = "result";
     resultBox.style.display = "flex";
     resultBox.style.flexDirection = "column";
@@ -151,9 +151,13 @@ function fill(id) {
       if (winnerIs == "noBody") {
         W = "No winner No loser";
         result(W);
-      } else {
+      } else if (winnerIs == "X") {
         cel.innerHTML = "X";
         var W = window.localStorage.getItem("G1");
+        result(W);
+      } else if (winnerIs == "O") {
+        var W = window.localStorage.getItem("G2");
+        cel.innerHTML = "O";
         result(W);
       }
     } else if (symbole == "O" && cel.innerHTML == "") {
@@ -165,7 +169,13 @@ function fill(id) {
       if (winnerIs == "noBody") {
         W = "No winner No loser";
         result(W);
-      } else {
+      } 
+      else if (winnerIs == "X") {
+        var W = window.localStorage.getItem("G1");
+        cel.innerHTML = "X";
+        result(W);
+      } 
+      else if (winnerIs == "O") {
         var W = window.localStorage.getItem("G2");
         cel.innerHTML = "O";
         result(W);
