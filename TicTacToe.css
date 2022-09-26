@@ -20,6 +20,8 @@ input {
 
 #gameBox {
   width: 50%;
+  height: auto;
+  max-height: 200px;
   background-color: palevioletred;
 }
 
@@ -43,8 +45,7 @@ input {
 .resultBox {
   z-index: 20;
   width: 100%;
-  height: 50%;
-  top: 25%;
+  height: auto;
   position: absolute;
   background-color: rgb(250, 212, 236);
   border: 3px solid plum;
