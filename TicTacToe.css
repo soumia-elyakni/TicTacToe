@@ -1,70 +1,65 @@
-
-body{
-display: flex;
-justify-content: center;
-align-items: center;
-padding-top: 30px;
-background-color: rgb(247, 226, 239);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  background-color: rgb(247, 226, 239);
 }
 
-input{
-    border: 2px solid purple;
+input {
+  border: 2px solid purple;
 }
 
-.turnOf{
+.turnOf {
   border: 2px solid purple;
   border-radius: 7px;
   padding: 8px;
   font-size: large;
   font-weight: bold;
-
 }
 
-#gameBox{
-    width: 50%;
-    background-color: palevioletred;
+#gameBox {
+  width: 50%;
+  background-color: palevioletred;
 }
 
-.role{
-    color: purple;
+.role {
+  color: purple;
 }
 
-.gaming{
-    
-    width: 70%;
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 50px 0;
-    position: relative;
+.gaming {
+  width: 70%;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 50px 0;
+  position: relative;
 }
 
-.cels{
-    height: 88px;
-    z-index : 10;
+.cels {
+  height: 88px;
+  z-index: 10;
 }
 
-.resultBox{
-    z-index : 20;
-    width: 100%;
-    height: 50%;
-    top : 25%;
-    position: absolute;
-    background-color: rgb(250, 212, 236);
-    border: 3px solid plum;
-    border-radius: 3%;
-    display: none;
-    
+.resultBox {
+  z-index: 20;
+  width: 100%;
+  height: 50%;
+  top: 25%;
+  position: absolute;
+  background-color: rgb(250, 212, 236);
+  border: 3px solid plum;
+  border-radius: 3%;
+  display: none;
 }
 
-.resultMsg{
-    color: purple;
+.resultMsg {
+  color: purple;
 }
 
-.cel{
-    background-color: plum;
+.cel {
+  background-color: plum;
 }
 
-.cel:hover{
-    background-color: pink;
+.cel:hover {
+  background-color: pink;
 }
-
