@@ -41,17 +41,19 @@ function sira() {
 }
 
 function result(W) {
-  let div = document.createElement("div");
+  let p = document.createElement("p");
   if (winnerIs == "noBody") {
-    div.textContent = W;
-    div.className = "result";
-    resultBox.style.display = "block";
-    resultMsg.append(div);
+    p.textContent = W;
+    p.className = "result";
+    resultBox.style.display = "flex";
+    resultBox.style.flexDirection = "column";
+    resultMsg.append(p);
   } else {
-    div.textContent = "winner is:" + " " + W;
-    div.className = "result";
-    resultBox.style.display = "block";
-    resultMsg.append(div);
+    p.textContent = "winner is:" + " " + W;
+    p.className = "result";
+    resultBox.style.display = "flex";
+    resultBox.style.flexDirection = "column";
+    resultMsg.append(p);
   }
 }
 
@@ -149,13 +151,9 @@ function fill(id) {
       if (winnerIs == "noBody") {
         W = "No winner No loser";
         result(W);
-      } else if (winnerIs == "X") {
+      } else {
         cel.innerHTML = "X";
         var W = window.localStorage.getItem("G1");
-        result(W);
-      } else if (winnerIs == "O") {
-        var W = window.localStorage.getItem("G2");
-        cel.innerHTML = "O";
         result(W);
       }
     } else if (symbole == "O" && cel.innerHTML == "") {
@@ -167,11 +165,7 @@ function fill(id) {
       if (winnerIs == "noBody") {
         W = "No winner No loser";
         result(W);
-      } else if (winnerIs == "X") {
-        var W = window.localStorage.getItem("G1");
-        cel.innerHTML = "X";
-        result(W);
-      } else if (winnerIs == "O") {
+      } else {
         var W = window.localStorage.getItem("G2");
         cel.innerHTML = "O";
         result(W);
