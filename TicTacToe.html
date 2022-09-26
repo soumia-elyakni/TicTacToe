@@ -1,61 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="TicTacToe.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="TicTacToe.css" />
     <title>X.O</title>
-</head>
-<body class="d-flex justify-content-center align-items-center">
-    <div class="gameBox d-flex flex-column w-50 align-self-center justify-content-center text-center">
-        <div class="titre w-75 mx-3 mt-2 h-25 align-self-center justify-content-center p-2 fs-2 ">
-            X-O
+  </head>
+  <body class="d-flex justify-content-center align-items-center">
+    <div
+      class="gameBox d-flex flex-column w-50 align-self-center justify-content-center text-center"
+    >
+      <div
+        class="titre w-75 mx-3 mt-2 h-25 align-self-center justify-content-center p-2 fs-2"
+      >
+        X-O
+      </div>
+
+      <div class="gamersInfos d-flex flex-row justify-content-between mb-2">
+        <div class="gamer1 d-flex flex-col">
+          <input
+            id="gamer1"
+            type="text"
+            placeholder="Nom du 1ér joueur"
+            class="rounded-3 p-2"
+          />
         </div>
 
-        <div class="gamersInfos d-flex flex-row justify-content-between mb-2">
-            <div class="gamer1 d-flex flex-col">
-                <input id="gamer1" type="text" placeholder="Nom du 1ér joueur" class="rounded-3 p-2">
-            </div>
-
-            <div class="gamer2 d-flex flex-col">
-                <input id="gamer2" type="text" placeholder="Nom du 2éme joueur" class="rounded-3 p-2">
-            </div>
+        <div class="gamer2 d-flex flex-col">
+          <input
+            id="gamer2"
+            type="text"
+            placeholder="Nom du 2éme joueur"
+            class="rounded-3 p-2"
+          />
         </div>
-        <div class="d-flex justify-content-center" id="turn">
-            <input type="button" value="Go" id="go" class="d-flex justify-content-center align-items-center text-center rounded-3 p-2 w-25" onclick="start()">
-        </div>
+      </div>
+      <div class="d-flex justify-content-center" id="turn">
+        <input
+          type="button"
+          value="Go"
+          id="go"
+          class="d-flex justify-content-center align-items-center text-center rounded-3 p-2 w-25"
+          onclick="start()"
+        />
+      </div>
 
-        <div class="gaming col mx-3 mt-2 text-dark align-self-center justify-content-center">
-            <div class="resultBox" id="resultBox" class="d-flex flex-column justify-content-center align-items-center">
-                <div class="resultMsg h-25 w-100 m-auto justify-content-center d-flex text-center fw-4 fs-3 mt-3 py-2 " id="resultMsg">
-                </div>
-                <div class="d-flex flex-row justify-content-around align-items-center mt-3 pt-2">
-                    <input type="button" value="Next Match" class="d-flex justify-content-center align-items-center text-center rounded-3 p-2 w-25" onclick="next();">
-                    <input type="button" value="Replay" class="d-flex justify-content-center align-items-center text-center rounded-3 p-2 w-25" onclick="reload();">
-                </div>
-            </div>
-            <div class="cels d-flex row mx-3 justify-content-center">
-                <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c1" onclick="fill(this.id)"></div>
-                <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c2" onclick="fill(this.id)"></div>
-                <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c3" onclick="fill(this.id)"></div>
-            </div>
-            <div class="cels d-flex row mx-3 mt-1 justify-content-center">
-                <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c4" onclick="fill(this.id)"></div>
-                <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c5" onclick="fill(this.id)"></div>
-                <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c6" onclick="fill(this.id)"></div>
-            </div>
-            <div class="cels d-flex row mx-3 mt-1 justify-content-center">
-                <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c7" onclick="fill(this.id)"></div>
-                <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c8" onclick="fill(this.id)"></div>
-                <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c9" onclick="fill(this.id)"></div>
-            </div>
+      <div
+        class="gaming col mx-3 mt-2 text-dark align-self-center justify-content-center"
+      >
+        <div
+          class="resultBox"
+          id="resultBox"
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <div
+            class="resultMsg h-25 w-100 m-auto justify-content-center d-flex text-center fw-4 fs-3 mt-3 py-2"
+            id="resultMsg"
+          ></div>
+          <div
+            class="d-flex flex-row justify-content-around align-items-center mt-3 pt-2"
+          >
+            <input
+              type="button"
+              value="Next Match"
+              class="d-flex justify-content-center align-items-center text-center rounded-3 p-2 w-25"
+              onclick="next();"
+            />
+            <input
+              type="button"
+              value="Replay"
+              class="d-flex justify-content-center align-items-center text-center rounded-3 p-2 w-25"
+              onclick="reload();"
+            />
+          </div>
         </div>
-
-       
+        <div class="cels d-flex row mx-3 justify-content-center">
+          <div
+            class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3"
+            id="c1"
+            onclick="fill(this.id)"
+          ></div>
+          <div
+            class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3"
+            id="c2"
+            onclick="fill(this.id)"
+          ></div>
+          <div
+            class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3"
+            id="c3"
+            onclick="fill(this.id)"
+          ></div>
+        </div>
+        <div class="cels d-flex row mx-3 mt-1 justify-content-center">
+          <div
+            class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3"
+            id="c4"
+            onclick="fill(this.id)"
+          ></div>
+          <div
+            class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3"
+            id="c5"
+            onclick="fill(this.id)"
+          ></div>
+          <div
+            class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3"
+            id="c6"
+            onclick="fill(this.id)"
+          ></div>
+        </div>
+        <div class="cels d-flex row mx-3 mt-1 justify-content-center">
+          <div
+            class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3"
+            id="c7"
+            onclick="fill(this.id)"
+          ></div>
+          <div
+            class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3"
+            id="c8"
+            onclick="fill(this.id)"
+          ></div>
+          <div
+            class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3"
+            id="c9"
+            onclick="fill(this.id)"
+          ></div>
+        </div>
+      </div>
     </div>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
