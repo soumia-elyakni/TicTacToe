@@ -28,6 +28,14 @@
         </div>
 
         <div class="gaming col mx-3 mt-2 text-dark align-self-center justify-content-center">
+            <div class="resultBox" id="resultBox" class="d-flex flex-column justify-content-center align-items-center">
+                <div class="resultMsg h-25 w-100 m-auto justify-content-center d-flex text-center fw-4 fs-3 mt-3 py-2 " id="resultMsg">
+                </div>
+                <div class="d-flex flex-row justify-content-around align-items-center mt-3 pt-2">
+                    <input type="button" value="Next Match" class="d-flex justify-content-center align-items-center text-center rounded-3 p-2 w-25" onclick="next();">
+                    <input type="button" value="Replay" class="d-flex justify-content-center align-items-center text-center rounded-3 p-2 w-25" onclick="reload();">
+                </div>
+            </div>
             <div class="cels d-flex row mx-3 justify-content-center">
                 <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c1" onclick="fill(this.id)"></div>
                 <div class="cel d-flex col-3 mx-1 justify-content-center align-items-center fs-3" id="c2" onclick="fill(this.id)"></div>
